@@ -1,5 +1,5 @@
 import { Component, Inject } from '@angular/core';
-import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
+import { MAT_DIALOG_DATA, MatDialogActions, MatDialogRef } from '@angular/material/dialog';
 import { User } from 'src/app/shared/user';
 import { GameService } from 'src/app/services/game.service';
 import { AbstractControl, FormBuilder, FormControl, FormGroup, ValidationErrors, Validators } from '@angular/forms';
@@ -58,7 +58,7 @@ export class ModifyGameComponent {
     'Abandoned'];
 
   constructor(
-    public dialogRef: MatDialogRef<ModifyGameComponent>, 
+    public dialogRef: MatDialogRef<ModifyGameComponent>,
     @Inject(MAT_DIALOG_DATA) public data: DialogData,
     private gameService: GameService,
     private formBuilder: FormBuilder,

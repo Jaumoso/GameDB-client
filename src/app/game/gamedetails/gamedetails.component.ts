@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
-import { JwtService } from '../services/jwt.service';
+import { JwtService } from '../../services/jwt.service';
 import { ActivatedRoute, Router } from '@angular/router';
-import { GameService } from '../services/game.service';
+import { GameService } from '../../services/game.service';
 @Component({
   selector: 'app-gamedetails',
   templateUrl: './gamedetails.component.html',
@@ -27,7 +27,7 @@ export class GamedetailsComponent {
 
   async ngOnInit(){
     const token = localStorage.getItem('GameDB_token');
-    
+
     if (this.jwtService.isTokenExpired(token!)) {
       this.router.navigateByUrl('/home');
       return;

@@ -1,15 +1,15 @@
 import { Component, OnInit } from '@angular/core';
-import { UserService } from '../services/user.service';
-import { JwtService } from '../services/jwt.service';
+import { UserService } from '../../services/user.service';
+import { JwtService } from '../../services/jwt.service';
 import { Router } from '@angular/router';
-import { GameService } from '../services/game.service';
-import { User } from '../shared/user';
+import { GameService } from '../../services/game.service';
+import { User } from '../../shared/user';
 import { MatDialog } from '@angular/material/dialog';
-import { AddGameComponent } from '../dialogs/add-game/add-game.component';
+import { AddGameComponent } from '../../dialogs/add-game/add-game.component';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { DeleteGameComponent } from '../dialogs/delete-game/delete-game.component';
-import { Storefront } from '../shared/storefront';
-import { ModifyGameComponent } from '../dialogs/modify-game/modify-game.component';
+import { DeleteGameComponent } from '../../dialogs/delete-game/delete-game.component';
+import { Storefront } from '../../shared/storefront';
+import { ModifyGameComponent } from '../../dialogs/modify-game/modify-game.component';
 
 @Component({
   selector: 'app-library',
@@ -45,7 +45,7 @@ export class LibraryComponent implements OnInit {
 
   ngOnInit(): void {
     const token = localStorage.getItem('GameDB_token');
-    
+
     if (this.jwtService.isTokenExpired(token!)) {
       this.router.navigateByUrl('/home');
       return;
@@ -56,7 +56,7 @@ export class LibraryComponent implements OnInit {
       this.userService.getUser(decodedToken._id)
       .then((user) => {
         this.user = user;
-        
+
         this.user.library?.forEach((libraryGame) => {
           // Save total number of games
           this.totalGames++;
@@ -137,13 +137,13 @@ export class LibraryComponent implements OnInit {
       this.filteredGames = this.gameList; // Update the filteredGames array
       return this.filteredGames;
     }
-  
+
     // Filter the collections based on the search text and category
     const filteredGames = this.gameList.filter((game) => {
       const match = game.name && this.isMatch(game.name);
       return match;
     });
-  
+
     this.filteredGames = filteredGames;
     return filteredGames;
   }
@@ -220,14 +220,14 @@ export class LibraryComponent implements OnInit {
       const dialogRef = this.addGameDialog.open(ModifyGameComponent, {
         data: { game: game }
       });
-  
+
       dialogRef.afterClosed().subscribe((result) => {
         if (result) {
           // Encuentra el juego en la lista de la biblioteca del usuario
           const library_index = this.user?.library.findIndex(g => g.gameId === result.gameId);
           // Encuentra el juego en la lista de juegos
           const gameList_index = this.gameList.findIndex(g => g.gameId === result.gameId);
-  
+
           if (library_index !== -1 && gameList_index !== -1) {
             // Actualiza el juego en la lista de juegos
             this.user?.library.splice(library_index!, 1, result);
@@ -245,7 +245,7 @@ export class LibraryComponent implements OnInit {
             if(result.storefronts){this.processStorefronts(result, true);}
 
           this.snackBar.open(
-            "Game modified.", 
+            "Game modified.",
             "OK",
             {
               verticalPosition: 'bottom',
@@ -272,7 +272,7 @@ export class LibraryComponent implements OnInit {
             this.user?.library.splice(index!, 1);
             this.userService.updateUserContent(this.user?._id!,this.user!)
             .then(() => {
-              // this.gameList.splice(index!, 1) 
+              // this.gameList.splice(index!, 1)
 
               // Decrease counters
               this.totalGames--;
@@ -283,7 +283,7 @@ export class LibraryComponent implements OnInit {
               if(result.time){this.totalHours = this.totalHours - result.time;}
 
               this.snackBar.open(
-                "Game deleted from library.", 
+                "Game deleted from library.",
                 "OK",
                 {
                   verticalPosition: 'bottom',
