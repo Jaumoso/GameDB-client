@@ -1,61 +1,95 @@
-# GameDB Web Application
 
-[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=Jaumoso_GameDB-client&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=Jaumoso_GameDB-client)
+# GameDB
 
 Welcome to the GameDB Web Application GitHub repository! This is an ongoing project aimed at providing gamers with a powerful tool to track the games they play, own, and want. As an enthusiast of MongoDB, NestJS, and Angular, you'll find this repository a perfect fit for your development needs.
 
-## Features (Work in Progress)
-While the project is still under development, here are some exciting features that i want to build:
 
-Game Tracking: Users will be able to keep a comprehensive record of the games they have played, including details such as title, genre, platform, release date, and progress status. This feature will allow users to monitor their gaming achievements and maintain a sense of accomplishment.
+## Quality Badges
 
-Game Library Management: The application will offer users the ability to create and manage a personalized game library. Users can add their owned games, including information such as physical or digital copies, purchase date, and rating. This feature will help users keep their game collection organized and easily accessible.
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=Jaumoso_GameDB-client&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=Jaumoso_GameDB-client)
+## Authors
 
-Wishlist Management: Users can create a wishlist of games they desire to play in the future. They will be able to add games, specify priority levels, and even add notes or reviews about their desired titles. This feature will allow users to keep track of their gaming goals and plan their future gaming experiences.
-
-User Authentication and Authorization: Implementing user authentication and authorization features will ensure secure access to the application. Users will have their personalized accounts and the ability to manage their game-related data securely.
-
-Interactive User Interface: The application's user interface will be built using Angular, providing a seamless and intuitive experience. The responsive design will ensure optimal usability across different devices and screen sizes.
-
-## Technology Stack
-The GameDB Web Application utilizes a powerful stack of technologies:
-
-Front-end: Angular
-Back-end: NestJS (Node.js)
-Database: MongoDB
-The combination of Angular and NestJS will enable a seamless development experience, leveraging the power of TypeScript throughout the application. MongoDB, a flexible and scalable NoSQL database, will handle the storage of game-related data.
-
-## Contributions
-Contributions to this project are highly encouraged and appreciated. Whether you are interested in fixing bugs, implementing new features, or enhancing the user interface, your contributions will play a vital role in shaping the GameDB Web Application. Please refer to the contribution guidelines in this repository to understand how you can get involved.
-
-Installation and Usage
-Once the initial development stage is complete, comprehensive installation and usage instructions will be provided in the project's documentation. This will guide you through setting up the development environment, installing dependencies, and running the application locally.
+- [@Jaumoso](https://www.github.com/Jaumoso)
+- [@TeviBR99](https://www.github.com/TeviBR99)
 
 
-# Frontend
+## Tech Stack
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.5.
+**Client:** Angular, Angular Material, SCSS
 
-## Development server
+**Server:** NestJS
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+**Database:** MongoDB Atlas
 
-## Code scaffolding
+## Acknowledgements
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+ - [Angular](https://angular.io/)
+ - [Angular Material](https://material.angular.io/)
+ - [SCSS](https://sass-lang.com/)
+ - [NestJS](https://nestjs.com/)
+ - [MongoDB Atlas](https://www.mongodb.com/atlas)
+ - [Readme.so](https://readme.so/)
 
-## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Environment Variables
 
-## Running unit tests
+To run this project, you will need to add the following environment variables to your .env file on the GameDB-server side.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+`JWT_SECRET` to secure the sessions.
 
-## Running end-to-end tests
+#### MongoDB Atlas Authentication
+`DB_USER` user of the MongoDB Atlas
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+`DB_PASSWORD` password of the MongoDB Atlas
 
-## Further help
+#### IGDB Authentication
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+`IGDB_CLIENT_ID` Twitch developer API ID
+
+`IGDB_SECRET` Twitch developer API Secret
+
+`IGDB_BASE_URL` URL of the IGDB API https://api.igdb.com/v4
+## Run Locally
+
+Clone the project
+
+```bash
+  git clone https://github.com/Jaumoso/GameDB-client.git
+```
+or
+```bash
+  git clone https://github.com/Jaumoso/GameDB-server.git
+```
+
+Go to the project directory
+
+```bash
+  cd GameDB-client
+```
+or
+```bash
+  cd GameDB-server
+```
+
+Install dependencies
+
+```bash
+  npm install -g yarn
+  yarn install
+```
+
+Start the client / server
+
+```bash
+  yarn start:dev
+```
+
+
+## Running Tests
+
+To run tests, run the following command
+
+```bash
+  yarn test
+```
+
