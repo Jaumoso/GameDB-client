@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
-import { GamesComponent } from './games/games.component';
+import { GamesComponent } from './game/games/games.component';
 import { LoginComponent } from './login/login.component';
-import { LibraryComponent } from './library/library.component';
+import { LibraryComponent } from './game/library/library.component';
 import { RegisterComponent } from './register/register.component';
 import { SettingsComponent } from './settings/settings.component';
-import { GamedetailsComponent } from './gamedetails/gamedetails.component';
+import { GamedetailsComponent } from './game/gamedetails/gamedetails.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' }, // Default route

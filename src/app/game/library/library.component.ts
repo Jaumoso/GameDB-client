@@ -22,10 +22,10 @@ export class LibraryComponent implements OnInit {
   storefronts: any[] = [];
   states: number[] = [0,0,0,0,0,0,0,0,0,0];
   private user: User | undefined;
-  isGridView: Boolean = false;
-  viewType: String = 'list';
+  isGridView: boolean = false;
+  viewType: string = 'list';
   storefrontInfo: Storefront[] | undefined;
-  searchText: String = '';
+  searchText: string = '';
   filteredGames: any[] | undefined;
 
   // Total variables

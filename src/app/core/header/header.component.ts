@@ -15,12 +15,12 @@ import { ThemeService } from '../../services/theme.service';
 })
 export class HeaderComponent implements OnInit {
 
-  isProfileDropdownOpen: Boolean = false;
-  loggedIn: Boolean = false;
+  isProfileDropdownOpen: boolean = false;
+  loggedIn: boolean = false;
   loginSubscription: Subscription | undefined;
-  username: String | undefined
+  username: string | undefined
   isSmallScreen = false;
-  value: String = '';
+  value: string = '';
   theme: boolean = false;
 
   constructor(
@@ -87,13 +87,4 @@ export class HeaderComponent implements OnInit {
       }
       );
   }
-
-  goToProfile() {
-
-  }
-
-  openLoginForm(){
-
-  }
-
 }

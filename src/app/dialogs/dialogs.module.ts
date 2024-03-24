@@ -34,7 +34,7 @@ import { ModifyGameComponent } from './modify-game/modify-game.component';
     MatAutocompleteModule,
     MatButtonToggleModule,
     MatDatepickerModule,
-    MatTabsModule
+    MatTabsModule,
   ],
   exports: [
     AddGameComponent,
